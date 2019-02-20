@@ -14,7 +14,7 @@ data.each do |row|
 			city: row[3],
 			county: row[4],
 			state: row[5],
-			zip: row[6],
+			zip_code: row[6],
 			apn: row[7],
 			latitude: row[8],
 			longitude: row[9],
