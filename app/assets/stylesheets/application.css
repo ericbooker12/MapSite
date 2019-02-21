@@ -13,3 +13,53 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+ 	background-color: #eeeeee;
+ }
+
+ .nav-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	/*grid-template-rows: 1fr;*/
+	background-color: lightgray;
+	height: $nav_height;
+}
+
+.nav-section {
+	height: 50px;
+	box-shadow: 2px 2px 1px 0px gray;
+	/*h-offset v-offset blur spread color*/
+}
+
+.nav-section:active{
+	box-shadow: 1px 1px 0px 0px gray;
+
+}
+
+.nav-section-1 {
+	grid-column: 1 / 2;
+}
+
+.nav-section-2 {
+	grid-column: 2 / 3;
+}
+
+.nav-section-3 {
+	grid-column: 3 / 4;
+}
+
+.nav-section-4 {
+	grid-column: 4 / 5;
+}
+
+.nav-section {
+ 	text-align: center;
+ 	/*vertical-align: baseline;*/
+ }
+
+
+
+.nav-card {
+	/*background-color: #F1FFFA;*/
+}
