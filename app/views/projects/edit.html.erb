@@ -1,14 +1,14 @@
 <%= link_to "Back", projects_path, :class => 'back-link '%>
 
 <div class="projects new">
-	<h2>Update Project</h2>
+	<h2><%= @project.name %></h2>
 
 	<%= form_for(@project) do |f| %>
 
 		<%= render :partial => 'form', :locals => {:f => f} %>
 
 		<div class="form-buttons">
-			<%= f.submit("Create Subject") %>
+			<%= f.submit("Update") %>
 		</div>
 
 

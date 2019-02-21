@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.all
+    @projects = Project.order(:id)
   end
 
   def new
@@ -49,7 +49,7 @@ class ProjectsController < ApplicationController
   private
 
     def project_params
-      params.require(:project).permit(:name, :project_number, :latitude, :longitude, :elevation, :apn, :city, :county, :zip_code, :state )
+      params.require(:project).permit(:name, :project_number, :address, :latitude, :longitude, :elevation, :apn, :city, :county, :zip_code, :state )
     end
 
     def full_address(address)
