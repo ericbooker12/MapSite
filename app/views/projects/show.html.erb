@@ -1,2 +1,77 @@
-<h1><%= @project.name %></h1>
-<div><%= simple_format @full_address %></div>
+<% if !flash[:notice].blank? %>
+	<div class="notice">
+		<%= flash[:notice] %>
+	</div>
+<% end %>
+
+
+<div class='project show'>
+
+
+
+	<section class="show-container">
+		<article class="info-card">
+			<h2><%= @project.name %></h2>
+
+			<table summary="subject detail view">
+				<!-- <tr>
+					<th align="left">Name:</th>
+					<td><%#= @project.name %></td>
+				</tr> -->
+				<tr>
+					<th align="left">Project Number:</th>
+					<td><%= @project.project_number %></td>
+				</tr>
+				<tr>
+					<th align="left">Address:</th>
+					<td><%= @project.address %></td>
+				</tr>
+				<tr>
+					<th align="left">Coordinates:</th>
+					<td id="coords"><%= @project.latitude %>, <%= @project.longitude %></td>
+				</tr>
+				<tr>
+					<th align="left">Elevation:</th>
+					<td><%= @project.elevation %> feet</td>
+				</tr>
+
+			</table>
+		</article>
+
+		<article class="map-card">
+			<div class="map">
+				<p>
+					<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&
+					center=#{@project.latitude},#{@project.longitude}&
+					key=#{Rails.application.credentials.google_maps_api_key}&
+					markers=size:small%7Ccolor:red%7C#{@project.latitude},#{@project.longitude}",
+					alt: "Map" %>
+				</p>
+			</div>
+		</article>
+
+	<div class="reports">
+<!-- 	  <%# (0...@project.reports.count).each do |report| %>
+	    <div style="width:300px; height:300px;">
+	     <%#= link_to 'view file', @project.report) %>
+	    </div>
+	  <%# end %> -->
+	</div>
+
+	</section>
+
+
+
+</div>
+
+<%= link_to "Back", projects_path, :class => 'back_link' %> |
+<%= link_to "Edit", edit_project_path(params[:id]), :class => 'edit_link'  %> |
+<%= link_to "Home", root_path, :class => 'home_link'  %> |
+<%= link_to "Delete", delete_project_path(@project), :class => 'delete_link'  %>
+
+
+<script>
+	  var x = document.getElementById("coords");
+	  // document.getElementById("demo").innerHTML = x;
+	  console.log(x);
+</script>

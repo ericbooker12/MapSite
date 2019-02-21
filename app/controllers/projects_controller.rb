@@ -10,7 +10,6 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @full_address = full_address(@project)
-
   end
 
   def create
@@ -41,9 +40,21 @@ class ProjectsController < ApplicationController
   end
 
   def delete
+    @project = Project.find(params[:id])
   end
 
   def destroy
+  end
+
+  def full_address(address)
+      p "*******************"
+      address.address ||= ""
+      address.city ||= ""
+      address.state ||= ""
+      address.zip_code ||= ""
+      address.address  + "<br>" + address.city   + ", " + address.state   + " " + address.zip_code
+
+
   end
 
   private
@@ -52,8 +63,5 @@ class ProjectsController < ApplicationController
       params.require(:project).permit(:name, :project_number, :address, :latitude, :longitude, :elevation, :apn, :city, :county, :zip_code, :state )
     end
 
-    def full_address(address)
-      address.address + "<br>" + address.city + ", " + address.state + " " +  address.zip_code
-    end
 
 end
