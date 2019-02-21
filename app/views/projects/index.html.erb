@@ -4,41 +4,44 @@
   </div>
 <% end %>
 
-<h1></h1>
+<div class="projects index">
 
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Project Number</th>
-      <th>Address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zip Code</th>
-      <th>County</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.name  %></td>
-        <td><%= project.project_number  %></td>
-        <td><%= project.address ? word_wrap(project.address, line_width: 2) : ''  %></td>
-        <td><%= project.city  %></td>
-        <td><%= project.state  %></td>
-        <td><%= project.zip_code %></td>
-        <td><%= project.county  %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+
+      <article class="card project-card">
+
+          <%= link_to project_path(project) do %>
+          <div id="project_info">
+
+            <p class="project_name"> <%= project.name %> </p>
+
+
+            <p class="project_num info"> <%= project.project_number %></p>
+            <p class="project_address info">
+              <% if project.address != "N/A" %>
+                <%= project.address %>
+              <% end %>
+
+          </div>
+          <% end %>
+
+        <div class="map_thumbnail">
+
+          <!-- // Thumbnail - loads faster -->
+          <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{project.latitude},#{project.longitude}&markers=#{project.latitude},#{project.longitude}&zoom=12&size=300x150&key=AIzaSyAeKNhV01zZM30gvZIKivEY47cFTzjLmlA",
+              class: 'img-fluid img-rounded', alt: "#{project.name}"%>
+
+          <!-- imbedded map - Takes longer to load-->
+          <!--<iframe
+            frameborder="0"
+            style="border:1"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAeKNhV01zZM30gvZIKivEY47cFTzjLmlA&q=<%#= project.latitude %>, <%#= project.longitude %>">
+          </iframe> -->
+
+        </div>
+
+      </article>
+
     <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= link_to 'New Post', new_project_path %>
+</div>
