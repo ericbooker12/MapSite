@@ -1,2 +1,16 @@
-<h1>Projects#edit</h1>
-<p>Find me in app/views/projects/edit.html.erb</p>
+<%= link_to "Back", projects_path, :class => 'back-link '%>
+
+<div class="projects new">
+	<h2>Update Project</h2>
+
+	<%= form_for(@project) do |f| %>
+
+		<%= render :partial => 'form', :locals => {:f => f} %>
+
+		<div class="form-buttons">
+			<%= f.submit("Create Subject") %>
+		</div>
+
+
+	<% end %>
+</div>

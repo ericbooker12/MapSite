@@ -9,6 +9,8 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @full_address = full_address(@project)
+
   end
 
   def create
@@ -24,9 +26,18 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    @project = Project.find(params[:id])
   end
 
   def update
+
+    @project = Project.find(params[:id])
+
+    if @project.update_attributes(project_params)
+      redirect_to projects_path
+    else
+      render 'edit'
+    end
   end
 
   def delete
@@ -39,6 +50,10 @@ class ProjectsController < ApplicationController
 
     def project_params
       params.require(:project).permit(:name, :project_number, :latitude, :longitude, :elevation, :apn, :city, :county, :zip_code, :state )
+    end
+
+    def full_address(address)
+      address.address + "<br>" + address.city + ", " + address.state + " " +  address.zip_code
     end
 
 end
