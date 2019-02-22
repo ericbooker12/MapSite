@@ -7,24 +7,32 @@
 
 <div class='project show'>
 
-
-
 	<section class="show-container">
 		<article class="info-card">
 			<h2><%= @project.name %></h2>
 
 			<table summary="subject detail view">
-				<!-- <tr>
-					<th align="left">Name:</th>
-					<td><%#= @project.name %></td>
-				</tr> -->
 				<tr>
-					<th align="left">Project Number:</th>
+					<th align="left">Project:</th>
 					<td><%= @project.project_number %></td>
 				</tr>
 				<tr>
 					<th align="left">Address:</th>
 					<td><%= @project.address %></td>
+				</tr>
+				<tr>
+					<th align="left">City:</th>
+					<td><%= @project.city %></td>
+				</tr>
+				<tr>
+				<tr>
+					<th align="left">State:</th>
+					<td><%= @project.state %></td>
+				</tr>
+				<tr>
+				<tr>
+					<th align="left">County:</th>
+					<td><%= @project.county %></td>
 				</tr>
 				<tr>
 					<th align="left">Coordinates:</th>

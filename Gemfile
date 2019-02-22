@@ -37,8 +37,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem "aws-sdk-s3", require: false
-gem 'geocoder', '~> 1.3', '>= 1.3.7'
-gem 'geokit', '~> 1.11'
+gem 'geocoder'
+gem 'geokit-rails'
 
 
 group :development, :test do
