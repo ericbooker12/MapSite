@@ -36,7 +36,7 @@
 				</tr>
 				<tr>
 					<th align="left">Coordinates:</th>
-					<td id="coords"><%= @project.latitude %>, <%= @project.longitude %></td>
+					<td id="coords"><span id='lat'><%= @project.latitude %></span>, <span id='lng'> <%= @project.longitude %></span></td>
 				</tr>
 				<tr>
 					<th align="left">Elevation:</th>
@@ -46,15 +46,9 @@
 			</table>
 		</article>
 
-		<article class="map-card">
-			<div class="map">
-					<%#= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&
-					center=#{@project.latitude},#{@project.longitude}&
-					key=#{Rails.application.credentials.google_maps_api_key}&
-					markers=size:small%7Ccolor:red%7C#{@project.latitude},#{@project.longitude}",
-					alt: "Map" %>
-			</div>
-		</article>
+		<!-- <article class="map-card"> -->
+			<div id="map"></div>
+		<!-- </article> -->
 
 
 	</section>
@@ -75,11 +69,17 @@
 	  // var longitude = coords[1];
 
 	  function initMap() {
-  		// The location of Uluru
-  		var uluru = {lat: -25.344, lng: 131.036};
+
+	  	var lat = parseFloat(document.getElementById('lat').innerHTML);
+	  	var lng = parseFloat(document.getElementById('lng').innerHTML);
+
+	  	var coords = {lat, lng};
+
+	  	console.log(coords);
+
   		// The map, centered at Uluru
   		var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: uluru});
+      document.getElementById('map'), {zoom: 4, center: coords});
 		}
 
 </script>
