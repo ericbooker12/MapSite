@@ -48,23 +48,14 @@
 
 		<article class="map-card">
 			<div class="map">
-				<p>
-					<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&
+					<%#= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&
 					center=#{@project.latitude},#{@project.longitude}&
 					key=#{Rails.application.credentials.google_maps_api_key}&
 					markers=size:small%7Ccolor:red%7C#{@project.latitude},#{@project.longitude}",
 					alt: "Map" %>
-				</p>
 			</div>
 		</article>
 
-	<div class="reports">
-<!-- 	  <%# (0...@project.reports.count).each do |report| %>
-	    <div style="width:300px; height:300px;">
-	     <%#= link_to 'view file', @project.report) %>
-	    </div>
-	  <%# end %> -->
-	</div>
 
 	</section>
 
@@ -79,7 +70,38 @@
 
 
 <script>
-	  var x = document.getElementById("coords");
-	  // document.getElementById("demo").innerHTML = x;
-	  console.log(x);
+	  // var coords = (document.getElementById("coords").innerHTML).split(",");
+	  // var latitude = coords[0];
+	  // var longitude = coords[1];
+
+	  function initMap() {
+  		// The location of Uluru
+  		var uluru = {lat: -25.344, lng: 131.036};
+  		// The map, centered at Uluru
+  		var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4, center: uluru});
+		}
+
 </script>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeKNhV01zZM30gvZIKivEY47cFTzjLmlA&callback=initMap">
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
