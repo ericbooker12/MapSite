@@ -30,7 +30,7 @@
         <div class="map_thumbnail">
 
           <!-- // Thumbnail - loads faster -->
-          <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{project.latitude},#{project.longitude}&markers=#{project.latitude},#{project.longitude}&zoom=12&size=300x150&key=AIzaSyAeKNhV01zZM30gvZIKivEY47cFTzjLmlA",
+          <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{project.latitude},#{project.longitude}&markers=#{project.latitude},#{project.longitude}&zoom=12&size=300x150&key=#{Rails.application.credentials.google_api_key}",
               class: 'img-fluid img-rounded', alt: "#{project.name}"%>
 
           <!-- imbedded map - Takes longer to load-->

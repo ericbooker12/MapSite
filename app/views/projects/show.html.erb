@@ -4,7 +4,6 @@
 	</div>
 <% end %>
 
-
 <div class='project show'>
 
 	<section class="show-container">
@@ -104,8 +103,11 @@
 </script>
 
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeKNhV01zZM30gvZIKivEY47cFTzjLmlA&callback=initMap">
-    </script>
+    src="https://maps.googleapis.com/maps/api/js?key=<%=Rails.application.credentials.google_api_key %>&callback=initMap">
+
+ </script>
+
+<!-- key=<%=Rails.application.credentials.google_api_key %> -->
 
 
 
