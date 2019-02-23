@@ -68,19 +68,38 @@
 	  // var latitude = coords[0];
 	  // var longitude = coords[1];
 
-	  function initMap() {
+// 	  var marker;
 
-	  	var lat = parseFloat(document.getElementById('lat').innerHTML);
-	  	var lng = parseFloat(document.getElementById('lng').innerHTML);
+// 	  function initMap() {
 
-	  	var coords = {lat, lng};
+// 	  	var lat = parseFloat(document.getElementById('lat').innerHTML);
+// 	  	var lng = parseFloat(document.getElementById('lng').innerHTML);
 
-	  	console.log(coords);
+// 	  	var coords = {lat, lng};
 
-  		// The map, centered at Uluru
-  		var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: coords});
-		}
+// 	  	console.log(coords);
+
+//   		// The map, centered at Uluru
+//   		var map = new google.maps.Map(
+//       document.getElementById('map'), {zoom: 18, center: coords});
+
+//   		marker = new google.maps.Marker({
+//   			position: coords,
+//   			animation: google.maps.Animation.DROP,
+//   			map: map
+//   		});
+
+//   		marker.addListener('click', toggleBounce);
+
+// 		}
+
+// 		function toggleBounce() {
+//   if (marker.getAnimation() !== null) {
+//     marker.setAnimation(null);
+//   } else {
+//     marker.setAnimation(google.maps.Animation.BOUNCE);
+//   }
+// }
 
 </script>
 
