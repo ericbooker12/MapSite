@@ -1,3 +1,352 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// Place all the styles related to the project controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$lavender_gray: hsla(159%, 16%, 79%, 1);
+$color2: hsla(184%, 12%, 72%, 1);
+$color3: hsla(210%, 5%, 64%, 1);
+$color4: hsla(273%, 4%, 52%, 1);
+$color5: hsla(346%, 8%, 31%, 1);
+
+
+
+.project {
+	font-family: "Open Sans", 'Helvetica Neue', 'Arial', sans-serif;
+}
+
+.card-container {
+	// display: grid;
+	// grid-template-columns: 1fr;
+	// grid-gap: .5rem;
+
+}
+.show-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr auto;
+	grid-gap: .5rem;
+	background-color: #F1FFFA;
+}
+
+.reports{
+	grid-column: 1 / 2;
+	grid-row: 2 / 3;
+}
+
+.card {
+
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-template-rows: 1fr 3fr;
+	grid-gap: 1px;
+	// grid-row: span 1;
+	height: 160px;
+	font-family: "Open Sans", 'Helvetica Neue', 'Arial', sans-serif;
+	line-height: 60%;
+	box-shadow: 0px 1px 2px #000;
+	background-color: #F1FFFA;
+	// grid-template-columns: 2fr 1fr;
+	// border-radius: .5rem;
+}
+
+
+.card a {
+	text-decoration: none;
+
+}
+
+.project-card:hover {
+	background-color: $lavender_gray;
+
+}
+
+.projects {
+	font-family: "Arial", serif;
+}
+
+.project_name {
+	grid-column: 1 / 2;
+	grid-row: 1 / 2;
+	font-size: 1.2em;
+	font-weight: bold;
+	padding: .5rem;
+}
+
+// .project_info {
+// 	grid-column: 1 / 3;
+// 	grid-row: 2 / 4;
+// 	font-size: 1.2em;
+// 	font-weight: bold;
+// 	padding: .5rem;
+// }
+
+.project_num {
+	grid-column: 1 / 2;
+	padding: 0rem .25rem 0rem .5rem;
+	font-size: .9rem;
+	// grid-row: 2 / 3;
+}
+
+.project_elevation {
+	grid-column: 1 / 2;
+	padding: 0rem .25rem 0rem .5rem;
+	font-size: .9rem;
+	grid-row: 1 / 4;
+}
+
+.project_address {
+	grid-column: 1 / 2;
+	padding: 0rem .25rem 0rem .5rem;
+	font-size: .9rem;
+	grid-row: 1 / 4;
+}
+
+.project_coordinates {
+	grid-column: 1 / 3;
+	padding: 0rem .25rem 0rem .5rem;
+	font-size: .9rem;
+	grid-row: 1 / 4;
+}
+
+#map {
+	// background-color: #93B7BE;
+	// border: 1px solid #000;
+	// grid-row: 1 / 4;
+	height: 400px;
+	width: 100%;
+	grid-column: 1 / 3;
+	grid-row: 2 / 3;
+	// padding: 0rem .25rem 0rem .5rem;
+	margin: 10px;
+}
+
+.map_thumbnail {
+
+	grid-column: 2 / 3;
+	// padding: 0rem .25rem 0rem .5rem;
+	margin: 5px;
+
+}
+
+* {
+	box-sizing: border-box;
+}
+
+
+
+// laptop - small screen
+@media screen and (max-width: 620px) {
+
+// 	// .card {
+// 	// 	display: grid;
+// 	// 	grid-template-columns: 1fr 1fr;
+// 	// 	grid-gap: 1px;
+// 	// 	grid-row: span 1;
+// 	// 	height: 160px;
+// 	// 	font-family: "Open Sans", 'Helvetica Neue', 'Arial', sans-serif;
+// 	// 	line-height: 60%;
+// 	// 	box-shadow: 0px 1px 2px #000;
+// 	// 	background-color: #F1FFFA;
+// 	// 	grid-template-columns: 1fr 1fr 1fr;
+// 	// 	// border-radius: .5rem;
+// 	// }
+
+// 	// .projects {
+// 	// 	font-family: "Arial", serif;
+// 	// }
+
+	.project_name {
+		grid-column: 1 / 3;
+		grid-row: 1 / 2;
+		font-size: .8em;
+		font-weight: bold;
+		padding: .5rem;
+	}
+
+	// .project_info {
+	// 	grid-column: 1 / 3;
+	// 	grid-row: 2 / 4;
+	// 	font-size: 1.2em;
+	// 	font-weight: bold;
+	// 	padding: .5rem;
+	// }
+
+// 	.project_num {
+// 		grid-column: 1 / 3;
+// 		padding: 0rem .25rem 0rem .5rem;
+// 		font-size: .9rem;
+// 		// grid-row: 2 / 3;
+// 	}
+
+// 	.project_elevation {
+// 		grid-column: 1 / 3;
+// 		padding: 0rem .25rem 0rem .5rem;
+// 		font-size: .9rem;
+// 		grid-row: 1 / 4;
+// 	}
+
+// 	.project_coordinates {
+// 		grid-column: 1 / 3;
+// 		padding: 0rem .25rem 0rem .5rem;
+// 		font-size: .9rem;
+// 		grid-row: 1 / 4;
+// 	}
+
+// 	#map {
+// 		grid-column: 3 / 4;
+// 		// padding: 0rem .25rem 0rem .5rem;
+// 		margin: 10px;
+// 	}
+
+// 	.map_thumbnail {
+
+// 		grid-column: 3 / 4;
+// 		// padding: 0rem .25rem 0rem .5rem;
+// 		margin: 5px;
+
+// 	}
+
+// 	* {
+// 		box-sizing: border-box;
+// 	}
+
+}
+
+// @media screen and (max-width: 902px) {
+
+// 	.card-container {
+// 		display: grid;
+// 		grid-template-columns: 1fr;
+// 		// grid-gap: .5rem;
+
+	// }
+
+
+// 	.card {
+// 		display: grid;
+// 		grid-template-columns: auto auto auto;
+// 		grid-gap: 1px;
+// 		grid-row: span 1;
+// 		height: 160px;
+// 		font-family: "Open Sans", 'Helvetica Neue', 'Arial', sans-serif;
+// 		line-height: 60%;
+// 		box-shadow: 0px 1px 2px #000;
+// 		background-color: #F1FFFA;
+// 		grid-template-columns: 1fr 1fr 1fr;
+// 		// border-radius: .5rem;
+// 	}
+
+// 	.projects {
+// 		font-family: "Arial", serif;
+// 	}
+
+// 	.project_name {
+// 		grid-column: 1 / 3;
+// 		grid-row: 1 / 2;
+// 		font-size: 1.2em;
+// 		font-weight: bold;
+// 		padding: .5rem;
+// 	}
+
+// 	// .project_info {
+// 	// 	grid-column: 1 / 3;
+// 	// 	grid-row: 2 / 4;
+// 	// 	font-size: 1.2em;
+// 	// 	font-weight: bold;
+// 	// 	padding: .5rem;
+// 	// }
+
+// 	.project_num {
+// 		grid-column: 1 / 3;
+// 		padding: 0rem .25rem 0rem .5rem;
+// 		font-size: .9rem;
+// 		// grid-row: 2 / 3;
+// 	}
+
+// 	.project_elevation {
+// 		grid-column: 1 / 3;
+// 		padding: 0rem .25rem 0rem .5rem;
+// 		font-size: .9rem;
+// 		grid-row: 1 / 4;
+// 	}
+
+// 	.project_coordinates {
+// 		grid-column: 1 / 3;
+// 		padding: 0rem .25rem 0rem .5rem;
+// 		font-size: .9rem;
+// 		grid-row: 1 / 4;
+// 	}
+
+// 	#map {
+// 		// background-color: #93B7BE;
+// 		// border: 1px solid #000;
+// 		// grid-row: 1 / 4;
+// 		grid-column: 3 / 4;
+// 		// padding: 0rem .25rem 0rem .5rem;
+// 		margin: 10px;
+// 	}
+
+// 	.map_thumbnail {
+
+// 		grid-column: 3 / 4;
+// 		// padding: 0rem .25rem 0rem .5rem;
+// 		margin: 5px;
+
+// 	}
+
+// 	* {
+// 		box-sizing: border-box;
+// 	}
+
+// 	.info {
+// 		visibility: hidden;
+// 	}
+
+// }
+
+// //-------------------------------------------------------------
+
+// // for iphone
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px)
+and (orientation : portrait) {
+	.project_name {
+		// grid-column: 1 / 3;
+		grid-row: 1 / 4;
+		font-size: 2.5em;
+		font-weight: bold;
+	}
+
+	.project_elevation {
+		visibility: hidden;
+
+	}
+
+	.project_num {
+		// visibility: hidden
+		font-size: 2.5em;
+	}
+
+ .project_coordinates {
+		visibility: hidden;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,2 +1,49 @@
-<h1>Projects#index</h1>
-<p>Find me in app/views/projects/index.html.erb</p>
+<% if !flash[:notice].blank? %>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<div class="projects index">
+
+    <% @projects.each do |project| %>
+
+      <article class="card project-card">
+
+          <%= link_to project_path(project) do %>
+          <div id="project_info">
+
+            <p class="project_name"> <%= project.name %> </p>
+
+
+            <p class="project_num info"> <%= project.project_number %></p>
+            <div class="address">
+            <p class="project_address info">
+                <p> <%= %></p>
+                <p> <%= %></p>
+            </div>
+
+
+          </div>
+          <% end %>
+
+        <div class="map_thumbnail">
+
+          <!-- // Thumbnail - loads faster -->
+          <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{project.latitude},#{project.longitude}&markers=#{project.latitude},#{project.longitude}&zoom=12&size=300x150&key=AIzaSyAeKNhV01zZM30gvZIKivEY47cFTzjLmlA",
+              class: 'img-fluid img-rounded', alt: "#{project.name}"%>
+
+          <!-- imbedded map - Takes longer to load-->
+          <!--<iframe
+            frameborder="0"
+            style="border:1"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAeKNhV01zZM30gvZIKivEY47cFTzjLmlA&q=<%#= project.latitude %>, <%#= project.longitude %>">
+          </iframe> -->
+
+        </div>
+
+      </article>
+
+    <% end %>
+
+</div>
