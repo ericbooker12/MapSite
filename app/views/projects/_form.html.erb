@@ -25,5 +25,12 @@
 		<th align="left">County:</th>
 		<td><%= f.text_field(:county) %></td>
 	</tr>
+	<tr>
+		<th align="left">File:</th>
+		<td><%= f.file_field :files, multiple: true, direct_upload: true %></td>
+	</tr>
+
+
+
 
 </table>

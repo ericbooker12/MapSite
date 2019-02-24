@@ -39,8 +39,7 @@ $color5: hsla(346%, 8%, 31%, 1);
 	line-height: 60%;
 	box-shadow: 0px 1px 2px #000;
 	background-color: #F1FFFA;
-	// grid-template-columns: 2fr 1fr;
-	// border-radius: .5rem;
+
 }
 
 .card a {
@@ -63,19 +62,10 @@ $color5: hsla(346%, 8%, 31%, 1);
 	padding: .5rem;
 }
 
-// .project_info {
-// 	grid-column: 1 / 3;
-// 	grid-row: 2 / 4;
-// 	font-size: 1.2em;
-// 	font-weight: bold;
-// 	padding: .5rem;
-// }
-
 .project_num {
 	grid-column: 1 / 2;
 	padding: 0rem .25rem 0rem .5rem;
 	font-size: .9rem;
-	// grid-row: 2 / 3;
 }
 
 .project_elevation {
@@ -103,7 +93,10 @@ $color5: hsla(346%, 8%, 31%, 1);
 .map_thumbnail {
 	grid-column: 2 / 3;
 	// padding: 0rem .25rem 0rem .5rem;
-	margin: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	width: 100%;
 }
 
 * {
@@ -139,6 +132,10 @@ $color5: hsla(346%, 8%, 31%, 1);
 		font-size: .8em;
 		font-weight: bold;
 		padding: .5rem;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+
 	}
 
 	// .project_info {
@@ -294,6 +291,7 @@ and (orientation : portrait) {
 		grid-row: 1 / 4;
 		font-size: 2.5em;
 		font-weight: bold;
+		padding: 10px;
 	}
 
 	.project_elevation {

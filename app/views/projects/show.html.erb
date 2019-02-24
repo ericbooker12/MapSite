@@ -34,23 +34,34 @@
 					<td><%= @project.county %></td>
 				</tr>
 				<tr>
-					<th align="left">Coordinates:</th>
-					<td id="coords"><span id='lat'><%= @project.latitude %></span>, <span id='lng'> <%= @project.longitude %></span></td>
-				</tr>
-				<tr>
-					<th align="left">Elevation:</th>
-					<td><%= @project.elevation %> feet</td>
-				</tr>
 
 			</table>
+
+			<%= link_to "Edit", edit_project_path(params[:id]), :class => 'edit_link'  %>
+
 		</article>
 
-		<!-- <article class="map-card"> -->
-			<div id="map-container">
-				<div id="map"></div>
-				<span id='coords'><%= @project.latitude %>, <%= @project.longitude %>
-			</div>
-		<!-- </article> -->
+		<article class="reports-card">
+			<div><%= @project.files.count %> files uploaded</div>
+
+			<ul>
+				<% @project.files.each do |file| %>
+					<li><%= link_to file.filename, file, target: :blank %> </li>
+				<% end %>
+			</ul>
+
+
+
+
+		</article>
+
+		<article class="map-card">
+			<div id="map"></div>
+			<span id='coords'>
+				<span id='lat'> <%= @project.latitude %></span>, <span id='lng'> <%= @project.longitude %></span>
+			</span>
+		</article>
+
 
 
 	</section>
@@ -60,57 +71,16 @@
 </div>
 
 <%= link_to "Back", projects_path, :class => 'back_link' %> |
-<%= link_to "Edit", edit_project_path(params[:id]), :class => 'edit_link'  %> |
+ |
 <%= link_to "Home", root_path, :class => 'home_link'  %> |
 <%= link_to "Delete", delete_project_path(@project), :class => 'delete_link'  %>
 
-
-<script>
-	  // var coords = (document.getElementById("coords").innerHTML).split(",");
-	  // var latitude = coords[0];
-	  // var longitude = coords[1];
-
-// 	  var marker;
-
-// 	  function initMap() {
-
-// 	  	var lat = parseFloat(document.getElementById('lat').innerHTML);
-// 	  	var lng = parseFloat(document.getElementById('lng').innerHTML);
-
-// 	  	var coords = {lat, lng};
-
-// 	  	console.log(coords);
-
-//   		// The map, centered at Uluru
-//   		var map = new google.maps.Map(
-//       document.getElementById('map'), {zoom: 18, center: coords});
-
-//   		marker = new google.maps.Marker({
-//   			position: coords,
-//   			animation: google.maps.Animation.DROP,
-//   			map: map
-//   		});
-
-//   		marker.addListener('click', toggleBounce);
-
-// 		}
-
-// 		function toggleBounce() {
-//   if (marker.getAnimation() !== null) {
-//     marker.setAnimation(null);
-//   } else {
-//     marker.setAnimation(google.maps.Animation.BOUNCE);
-//   }
-// }
-
-</script>
 
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=<%=Rails.application.credentials.google_api_key %>&callback=initMap">
 
  </script>
 
-<!-- key=<%=Rails.application.credentials.google_api_key %> -->
 
 
 
