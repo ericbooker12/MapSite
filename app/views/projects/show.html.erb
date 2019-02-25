@@ -42,13 +42,14 @@
 		</article>
 
 		<article class="reports-card">
-			<div><%= @project.files.count %> files uploaded</div>
-
-			<ul>
-				<% @project.files.each do |file| %>
-					<li><%= link_to file.filename, file, target: :blank %> </li>
-				<% end %>
-			</ul>
+			<div>
+			<h3 class='files'>Files:</h3>
+				<ul>
+					<% @project.files.each do |file| %>
+						<li><%= link_to file.filename, file, target: :blank %> </li>
+					<% end %>
+				</ul>
+			</div>
 
 
 
