@@ -17,11 +17,6 @@
 
 
             <p class="project_num info"> <%= project.project_number %></p>
-            <div class="address">
-            <p class="project_address info">
-                <p> <%= %></p>
-                <p> <%= %></p>
-            </div>
 
 
           </div>
@@ -30,11 +25,11 @@
         <div class="map_thumbnail">
 
           <!-- // Thumbnail - loads faster -->
-          <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{project.latitude},#{project.longitude}&markers=#{project.latitude},#{project.longitude}&zoom=12&size=300x150&key=AIzaSyAeKNhV01zZM30gvZIKivEY47cFTzjLmlA",
+          <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{project.latitude},#{project.longitude}&markers=#{project.latitude},#{project.longitude}&zoom=12&size=400x150&key=#{Rails.application.credentials.google_api_key}",
               class: 'img-fluid img-rounded', alt: "#{project.name}"%>
 
           <!-- imbedded map - Takes longer to load-->
-          <!--<iframe
+        <!--   <iframe
             frameborder="0"
             style="border:1"
             src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAeKNhV01zZM30gvZIKivEY47cFTzjLmlA&q=<%#= project.latitude %>, <%#= project.longitude %>">

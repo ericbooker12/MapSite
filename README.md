@@ -1,25 +1,6 @@
-# README
+# SiteMap
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An application that tracks jobsites. It uses Google Maps API and the Geocoder gem for geolocation and Rails' Active Storage to upload files associated with each project. Amazon S3 is used to store the files.
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 

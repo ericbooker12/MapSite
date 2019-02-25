@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
 
 	def new
 		@project = Project.new
+
 	end
 
 	def show
@@ -14,6 +15,7 @@ class ProjectsController < ApplicationController
 
 	def create
 		@project = Project.new(project_params)
+		# @project.attach(params[:project_file])
 
 		if @project.save
 			flash[:notice]
@@ -32,6 +34,8 @@ class ProjectsController < ApplicationController
 
 		@project = Project.find(params[:id])
 
+		# @project.project_files.attach(params[:project_files])
+
 		if @project.update_attributes(project_params)
 			redirect_to project_path(@project)
 		else
@@ -44,6 +48,10 @@ class ProjectsController < ApplicationController
 	end
 
 	def destroy
+		@project = Project.find(params[:id])
+		@project.destroy
+
+		redirect_to projects_path
 	end
 
 	# Helpers
@@ -54,7 +62,7 @@ class ProjectsController < ApplicationController
 	private
 
 		def project_params
-			params.require(:project).permit(:name, :project_number, :address, :latitude, :longitude, :elevation, :apn, :city, :county, :zip_code, :state )
+			params.require(:project).permit(:name, :project_number, :address, :latitude, :longitude, :elevation, :apn, :city, :county, :zip_code, :state, :project_file, files:[] )
 		end
 
 

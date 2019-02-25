@@ -16,6 +16,7 @@
 
  body {
  	background-color: #eeeeee;
+ 	height: 100%;
  }
 
  .nav-container {
@@ -26,10 +27,33 @@
 	height: $nav_height;
 }
 
+.link-text{
+	text-decoration: none;
+	vertical-align: center;
+	font-family: "Arial";
+	font-size: 1.2em;
+
+}
+
+.nav-text{
+	padding-top: 5%;
+	text-decoration: none;
+	color: black;
+
+}
+
+.nav-text:active{
+	text-decoration: none;
+
+
+}
+
 .nav-section {
+	text-align: center;
 	height: 50px;
 	box-shadow: 2px 2px 1px 0px gray;
 	/*h-offset v-offset blur spread color*/
+
 }
 
 .nav-section:active{
@@ -52,12 +76,6 @@
 .nav-section-4 {
 	grid-column: 4 / 5;
 }
-
-.nav-section {
- 	text-align: center;
- 	/*vertical-align: baseline;*/
- }
-
 
 
 .nav-card {
